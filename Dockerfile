@@ -12,6 +12,6 @@ RUN apk add --no-cache --update \
         git \
         && \
     npm install -g serverless && \
-    pip install --upgrade awscli s3cmd python-magic && \
+    pip install --upgrade awscli && \
     apk -v --purge del py-pip && \
     rm /var/cache/apk/*
