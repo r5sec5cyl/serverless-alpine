@@ -10,8 +10,10 @@ RUN apk add --no-cache --update \
         curl \
         unzip \
         git \
+        bash \
         && \
     npm install -g serverless && \
+    npm install -g serverless-python-requirements && \
     pip install --upgrade awscli && \
     apk -v --purge del py-pip && \
     rm /var/cache/apk/*
