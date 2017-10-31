@@ -2,8 +2,9 @@ FROM node:alpine
 RUN apk update
 RUN apk upgrade
 RUN apk add --no-cache --update \
-        python3 \
+        python \
         py-pip \
+        python3 \
         groff \
         less \
         mailcap \
@@ -11,8 +12,11 @@ RUN apk add --no-cache --update \
         unzip \
         git \
         bash \
+        gcc \
         && \
     python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
     npm install -g serverless && \
     npm install -g serverless-python-requirements && \
     pip install --upgrade awscli && \
