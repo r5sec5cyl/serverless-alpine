@@ -2,8 +2,6 @@ FROM node:alpine
 RUN apk update
 RUN apk upgrade
 RUN apk add --no-cache --update \
-        python \
-        py-pip \
         python3 \
         groff \
         less \
@@ -18,6 +16,6 @@ RUN apk add --no-cache --update \
     pip3 install --upgrade pip setuptools && \
     npm install -g serverless && \
     npm install -g serverless-python-requirements && \
-    pip install --upgrade awscli && \
+    pip3 install --upgrade awscli && \
     apk -v --purge del py-pip && \
     rm /var/cache/apk/*
