@@ -4,7 +4,6 @@ RUN apk upgrade
 RUN apk add --no-cache --update \
         python \
         py-pip \
-        python3 \
         groff \
         less \
         mailcap \
@@ -13,9 +12,8 @@ RUN apk add --no-cache --update \
         git \
         bash \
         && \
-    python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
-    pip3 install --upgrade pip setuptools && \
+    pip install --upgrade pip setuptools && \
     npm install -g serverless && \
     npm install -g serverless-python-requirements && \
     pip install --upgrade awscli && \
