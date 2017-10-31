@@ -12,7 +12,6 @@ RUN apk add --no-cache --update \
         unzip \
         git \
         bash \
-        gcc \
         && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
