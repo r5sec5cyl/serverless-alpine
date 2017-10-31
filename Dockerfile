@@ -12,7 +12,6 @@ RUN apk add --no-cache --update \
         git \
         bash \
         && \
-    rm -r /usr/lib/python*/ensurepip && \
     pip install --upgrade pip setuptools && \
     npm install -g serverless && \
     npm install -g serverless-python-requirements && \
